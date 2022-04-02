@@ -1,6 +1,6 @@
 # Client Specification
 
-### [Header Part](### Header Part)
+### [Header Part](###Header Part)
 
 The header part consists of header fields. Each header field is comprised of a name and a value, separated by ‘: ‘ (a colon and a space). The structure of header fields conform to the [HTTP semantic](https://tools.ietf.org/html/rfc7230#section-3.2). Each header field is terminated by ‘\r\n’. Considering the last header field and the overall header itself are each terminated with ‘\r\n’, and that at least one header is mandatory, this means that two ‘\r\n’ sequences always immediately precede the content part of a message.
 
@@ -13,7 +13,7 @@ Currently the following header fields are supported:
 
 The header part is encoded using the ‘ascii’ encoding. This includes the ‘\r\n’ separating the header and content part.
 
-### [Content Part](### content Part)
+### [Content Part](###content Part)
 
 Contains the actual content of the message. The content part of a message uses [JSON-RPC](http://www.jsonrpc.org/) to describe requests, responses and notifications. The content part is encoded using the charset provided in the Content-Type field. It defaults to `utf-8`, which is the only encoding supported right now. If a server or client receives a header with a different encoding than `utf-8` it should respond with an error.
 
